@@ -57,11 +57,11 @@ const db = mysql.createConnection({
     
 }; */
 
-// const httpsOptions = {
-//   key: fs.readFileSync("/opt/bitnami/apache/conf/connectopia.app.key"),
-//   cert: fs.readFileSync("/opt/bitnami/apache/conf/connectopia.app.crt"),
-//   // passphrase: "Tgc@0987",
-// };
+const httpsOptions = {
+  key: fs.readFileSync("/opt/bitnami/apache/conf/connectopia.app.key"),
+  cert: fs.readFileSync("/opt/bitnami/apache/conf/connectopia.app.crt"),
+  // passphrase: "Tgc@0987",
+};
 
 // const httpsOptions = {
 //   key: fs.readFileSync('D:\\Skillmuni.in SSL Certificate file\\skillmuni_key.pem'),
@@ -1224,10 +1224,10 @@ app.get("/getCodeOfEthicLogs", (req, res) => {
   });
 });
 
-// const server = https.createServer(httpsOptions, app).listen(2000, () => {
-//   console.log("Server running on https://localhost:2000/");
-// });
-
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+const server = https.createServer(httpsOptions, app).listen(2000, () => {
+  console.log("Server running on https://localhost:2000/");
 });
+
+// app.listen(port, () => {
+//   console.log(`Server is running on port ${port}`);
+// });
