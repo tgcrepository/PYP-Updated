@@ -1224,8 +1224,8 @@ app.get("/getCodeOfEthicLogs", (req, res) => {
   });
 });
 
-const server = https.createServer(httpsOptions, app).listen(2000, () => {
-  console.log("Server running on https://localhost:2000/");
+const server = https.createServer(httpsOptions, app).listen(8080, () => {
+  console.log("Server running on https://localhost:8080/");
 });
 
 // app.listen(port, () => {
