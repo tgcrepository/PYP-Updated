@@ -58,8 +58,8 @@ const db = mysql.createConnection({
 }; */
 
 const httpsOptions = {
-  key: fs.readFileSync("/opt/bitnami/apache/conf/connectopia.app.key"),
-  cert: fs.readFileSync("/opt/bitnami/apache/conf/connectopia.app.crt"),
+  key: fs.readFileSync("/opt/bitnami/letsencrypt/certificates/m2ost.com.key"),
+  cert: fs.readFileSync("/opt/bitnami/letsencrypt/certificates/m2ost.com.crt"),
   // passphrase: "Tgc@0987",
 };
 
@@ -1224,8 +1224,8 @@ app.get("/getCodeOfEthicLogs", (req, res) => {
   });
 });
 
-const server = https.createServer(httpsOptions, app).listen(8080, () => {
-  console.log("Server running on https://localhost:8080/");
+const server = https.createServer(httpsOptions, app).listen(6000, () => {
+  console.log("Server running on https://localhost:6000/");
 });
 
 // app.listen(port, () => {
